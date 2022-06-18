@@ -7,7 +7,7 @@ int main()
     page_File* page = new page_File;
 	HashLink* hashLink = new HashLink;
 	hashLink->readfile(page);
-	hashLink->savefile();
+	//hashLink->savefile();
     end = clock();
     cout<<"time = "<<double(end-start)/CLOCKS_PER_SEC<<"s"<<endl;
     string searchtext;
