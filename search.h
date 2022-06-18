@@ -233,13 +233,19 @@ void swap(Web& a, Web& b)
 int Partition(Web a[], int p, int r)
 {
 	int x = a[r].word_count;
+    int f = a[r].freq;
 	int i = p - 1;
 	for (int j = p; j < r; j++)
 	{
-		if (a[j].word_count <= x)
+		if (a[j].word_count < x)
 		{
 			swap(a[j], a[++i]);
 		}
+        else if (a[j].word_count == x)
+        {
+            if(a[j].freq < f)
+                swap(a[j], a[++i]);
+        }
 	}
 	swap(a[r], a[i + 1]);
 	return i + 1;
